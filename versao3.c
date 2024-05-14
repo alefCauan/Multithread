@@ -202,7 +202,7 @@ int main()
     for (int i = 0; i < QUANT_SISTEMA; i++)
         pthread_join(operacoes[i], NULL); // Espera uma thread finalizar
 
-    pthread_barrier_destroy(&barreira); // Inicializa o mutex
+    pthread_barrier_destroy(&barreira); // Inicializa a barreira
 
     // Preenche o vetor de funções de operação do cliente
     ponteiroOperacao[0] = saque;
@@ -213,7 +213,7 @@ int main()
 
     pthread_t threads[NUM_CLIENTS]; // Cria múltiplas threads
     
-    pthread_mutex_init(&mutex, NULL); // Inicializa o mutex
+    pthread_mutex_init(&mutex, NULL); // Inicializa a barreira
 
     // Inicializa o semáforo, passando como parâmetro a variável de semáforo, um valor que indica se são múltiplos processos ou threads e por fim a quantidade de threads que podem "executar ao mesmo tempo"
     sem_init(&semaforo, 0, 2);
